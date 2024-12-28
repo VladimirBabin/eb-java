@@ -6,7 +6,7 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-quickstart.html#java
 
 After the eb cli is configured, use the following commands to deploy the app:
 
-To init the applications with aws eb:
+To init the application in java platform with name java-tutorial and region us-east-1:
 ```bash
 eb init -p corretto java-tutorial --region us-east-1
 ```
