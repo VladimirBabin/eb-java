@@ -53,9 +53,9 @@ To clone the environment for blue-green deployment
 eb clone
 ```
 
-To swap the environment for blue-green deployment
+To swap the environment URLs for blue-green deployment
 ```bash
-eb swap <old-env-name> <new-env-name>
+eb swap <old-env-name> --destination_name <new-env-name>
 ```
 
 ***
