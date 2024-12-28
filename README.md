@@ -1,8 +1,14 @@
+# Elastic Beanstalk practice guide
+
+## Prerequisites
+
 to practice elastic beanstalk from the command line on your local environment clone the repo and install the eb cli first using these instructions:
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
 
 Here's a tutorial with the steps to deploy a sample Java app to Elastic Beanstalk, please consult in case of any basic questions arise:
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-quickstart.html#java-quickstart-run-local
+
+## Basic commands
 
 After the eb cli is configured, use the following commands to deploy the app:
 
@@ -19,7 +25,7 @@ eb create java-env --single
 
 To deploy/update:
 ```bash
-eb deploy
+eb deploy <optional-env-name>
 ```
 
 To open the app in the browser:
@@ -40,5 +46,28 @@ eb status
 To see the logs when the app is ready:
 ```bash
 eb logs
+```
+
+To clone the environment for blue-green deployment
+```bash
+eb clone
+```
+
+To swap the environment for blue-green deployment
+```bash
+eb swap <old-env-name> <new-env-name>
+```
+
+***
+## Deployment options:
+
+Add this .config file for setting immutable deploy:
+```yaml
+option_settings:
+  aws:elasticbeanstalk:command:
+    DeploymentPolicy: Immutable
+    HealthCheckSuccessThreshold: Warning
+    IgnoreHealthCheck: true
+    Timeout: "600"
 ```
 
