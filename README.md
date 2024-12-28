@@ -32,3 +32,13 @@ To terminate the environment:
 eb terminate
 ```
 
+To check the current status:
+```bash
+eb status
+```
+
+To see the logs when the app is ready:
+```bash
+eb logs
+```
+
