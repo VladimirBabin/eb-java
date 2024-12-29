@@ -24,14 +24,14 @@ docker run -p 8001:8001 eb-java-docker
 
 After the eb cli is configured, use the following commands to deploy the app:
 
-To init the application in java platform with name java-tutorial and region us-east-1:
+To init the application in docker platform with name docker-tutorial and region us-east-1:
 ```bash
-eb init -p corretto java-tutorial --region us-east-1
+eb init -p docker docker-tutorial --region us-east-1
 ```
 
 To create env without an elastic load balancer (with a single instance):
 ```bash
-eb create java-env --single     
+eb create docker-env --single     
 ```
 
 
