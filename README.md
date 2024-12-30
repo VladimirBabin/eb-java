@@ -12,13 +12,42 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-quickstart.html#java
 
 To test starting the app in a docker container locally follow these steps:
 1. build docker image 
-```
+```bash
 docker build -t eb-java-docker . 
 ```
 2. run  docker container 
-```
+```bash
 docker run -p 8001:8001 eb-java-docker
 ```
+
+## Steps for ECR deployment:
+
+1. build docker image locally
+```bash
+docker build -t eb-java-docker . 
+```
+
+2. make sure your AWS user has access to ecr:GetAuthorizationToken and ecr:CreateRepository actions
+
+3. authenticate to ECR
+```bash
+aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
+```
+
+4. get image id with docker images command
+   c0721af92efe
+5. tag image
+```bash
+docker tag <image_id> <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<image_name>
+```
+
+6. push image to ECR repo:
+```bash
+docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<image_name>
+```
+
+7. create an additional project with ed-java-external name and add Dockerrun.aws.json file in the project directory
+8. initialize git repo for new project, copy .gitignore file and .ebextensions directory there
 
 ## Basic commands
 
