@@ -8,6 +8,17 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
 Here's a tutorial with the steps to deploy a sample Java app to Elastic Beanstalk, please consult in case of any basic questions arise:
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-quickstart.html#java-quickstart-run-local
 
+Create an IAM role named "aws-elasticbeanstalk-ec2-role" with following permissions:
+- AWSElasticBeanstalkMulticontainerDocker
+- AWSElasticBeanstalkWebTier
+- AWSElasticBeanstalkWorkerTier
+- EC2InstanceProfileForImageBuilderECRContainerBuilds
+
+Also, a role named "aws-elasticbeanstalk-service-role" should be automatically created for you on first eb create command
+If not created, make sure you have this role with following permissions:
+- AWSElasticBeanstalkEnhancedHealth
+- AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy
+
 ## Docker
 
 To test starting the app in a docker container locally follow these steps:
