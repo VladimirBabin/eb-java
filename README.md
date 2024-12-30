@@ -33,7 +33,7 @@ docker run -p 8001:8001 eb-java-docker
 
 ## Steps for ECR deployment:
 
-1. build docker image locally
+1. build docker image locally (optionally add --platform linux/amd64 tag to build image on mac with silicon processor)
 ```bash
 docker build -t eb-java-docker . 
 ```
