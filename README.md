@@ -14,6 +14,11 @@ Create an IAM role named "aws-elasticbeanstalk-ec2-role" with following permissi
 - AWSElasticBeanstalkWorkerTier
 - EC2InstanceProfileForImageBuilderECRContainerBuilds
 
+Also, a role named "aws-elasticbeanstalk-service-role" should be automatically created for you on first eb create command
+If not created, make sure you have this role with following permissions:
+- AWSElasticBeanstalkEnhancedHealth
+- AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy
+
 ## Basic commands
 
 After the eb cli is configured, use the following commands to deploy the app:
