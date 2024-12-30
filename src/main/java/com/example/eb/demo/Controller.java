@@ -8,6 +8,6 @@ public class Controller {
 
     @GetMapping("/")
     public String index() {
-        return "Hello Elastic Beanstalk Docker single container env with ECR!";
+        return "Hello Elastic Beanstalk Docker single container env!";
     }
 }
