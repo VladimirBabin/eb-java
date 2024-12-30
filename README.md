@@ -8,6 +8,12 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
 Here's a tutorial with the steps to deploy a sample Java app to Elastic Beanstalk, please consult in case of any basic questions arise:
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-quickstart.html#java-quickstart-run-local
 
+Create an IAM role named "aws-elasticbeanstalk-ec2-role" with following permissions:
+- AWSElasticBeanstalkMulticontainerDocker
+- AWSElasticBeanstalkWebTier
+- AWSElasticBeanstalkWorkerTier
+- EC2InstanceProfileForImageBuilderECRContainerBuilds
+
 ## Basic commands
 
 After the eb cli is configured, use the following commands to deploy the app:
@@ -21,7 +27,6 @@ To create env without an elastic load balancer (with a single instance):
 ```bash
 eb create java-env --single     
 ```
-
 
 To deploy/update:
 ```bash
