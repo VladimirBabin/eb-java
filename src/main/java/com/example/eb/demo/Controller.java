@@ -8,6 +8,6 @@ public class Controller {
 
     @GetMapping("/")
     public String index() {
-        return "Hello Elastic Beanstalk V4 (Clone env)!";
+        return "Hello Elastic Beanstalk Docker single container env!";
     }
 }
