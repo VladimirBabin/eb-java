@@ -2,7 +2,9 @@
 
 This guide contains instructions and tips to practice aws elastic beanstalk from the command line on your local environment
 
-In the main branch you will find everything for deploying a java app with corretto (java) platform via EB. Build tool used is Gradle. 
+In the **main** branch you will find everything for deploying a java app with corretto (java) platform via EB. Build tool used is Gradle. 
+
+In the **single-docker-container** branch you will find everything for deploying with docker platform and single Dockerfile.
 
 ## Prerequisites
 
