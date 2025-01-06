@@ -44,7 +44,7 @@ java -jar build/libs/eb-java-0.0.1-SNAPSHOT.jar
 
 - Init the application in java platform with name java-tutorial and region us-east-1:
 ```bash
-eb init -p corretto java-tutorial --region us-east-1
+eb init -p corretto-17 java-tutorial --region us-east-1
 ```
 
 - Create env without an elastic load balancer (with a single instance):
